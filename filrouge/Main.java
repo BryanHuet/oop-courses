@@ -24,7 +24,7 @@ Activity lireMail = new Activity ("Lire mon courrier électronique", 5);
 
 
 	Scheduler schedule = new Scheduler();
-
+	System.out.println("hello");
 
 
 
