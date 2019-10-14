@@ -11,7 +11,7 @@ public class Activity {
 	public int getDuree(){
 		return this.duree;
 	}
-	public String getdescription(){
+	public String getDescription(){
 		return this.description;
 	}
 }

@@ -1,6 +1,6 @@
 package filrouge;
 
-public abstract class BinaryConstraint{
+public abstract class BinaryConstraint implements Constraint{
   protected Activity first;
   protected Activity second;
 

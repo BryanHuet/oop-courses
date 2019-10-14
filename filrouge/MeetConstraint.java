@@ -1,4 +1,5 @@
 package filrouge;
+import java.util.HashMap;
 
 public class MeetConstraint extends BinaryConstraint{
 
@@ -12,5 +13,9 @@ public class MeetConstraint extends BinaryConstraint{
 			}
 		return true;
 		}
+
+  public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object){
+    return true;
+  	}
 
 }
