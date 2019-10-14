@@ -14,8 +14,13 @@ public class MeetConstraint extends BinaryConstraint{
 		return true;
 		}
 
-  public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object){
-    return true;
+    public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object){
+      if ( ! this.isSatisfied(object.get(this.first),object.get(this.second))){
+        System.out.println("La contrainte MeetConstraint nest pas satisfaite");
+  			return false;
+  		}
+  		return true;
   	}
+
 
 }
