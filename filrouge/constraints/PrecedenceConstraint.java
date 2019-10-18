@@ -1,4 +1,5 @@
-package filrouge;
+package filrouge.constraints;
+import filrouge.*;
 import java.util.HashMap;
 
 /* class permettant de représenter des contraintes de précédence
