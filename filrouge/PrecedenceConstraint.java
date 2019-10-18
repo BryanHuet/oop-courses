@@ -14,7 +14,7 @@ public class PrecedenceConstraint extends BinaryConstraint{
 		}
 
 	public boolean isSatisfied(int date1, int date2){
-		if (this.first.getDuree()+date1*60 > date2*60){
+		if ((this.first.getDuree()+date1)*60 > date2*60){
 			return false;
 			}
 		return true;
