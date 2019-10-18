@@ -23,8 +23,7 @@ public class PrecedenceConstraint extends BinaryConstraint{
 
 	public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object){
 		if (! this.isSatisfied(object.get(this.first),object.get(this.second))){
-	      System.out.println("La contrainte PrecedenceConstraint nest pas satisfaite");
-			return false;
+	     return false;
 		}
 		return true;
 	}
