@@ -1,4 +1,5 @@
-package filrouge;
+package filrouge.constraints;
+import filrouge.*;
 import java.util.HashMap;
 
 /* class permettant de représenter des contraintes de précédence
@@ -14,17 +15,17 @@ public class PrecedenceConstraint extends BinaryConstraint{
 		}
 
 	public boolean isSatisfied(int date1, int date2){
-		if (this.first.getDuree()+date1*60 > date2*60){
+		if ((this.first.getDuree()+date1)*60 > date2*60){
 			return false;
 			}
 		return true;
 		}
 
 	public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object){
-		if (this.isSatisfied(object.get(this.first),object.get(this.second))){
-			return true;
+		if (! this.isSatisfied(object.get(this.first),object.get(this.second))){
+	     return false;
 		}
-		return false;
+		return true;
 	}
 
 }

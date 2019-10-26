@@ -1,4 +1,5 @@
-package filrouge;
+package filrouge.constraints;
+import filrouge.*;
 
 public class PrecedenceConstraintWithGap extends PrecedenceConstraint{
   protected int gap;
