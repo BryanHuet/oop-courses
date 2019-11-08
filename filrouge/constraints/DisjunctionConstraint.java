@@ -10,6 +10,10 @@ public class DisjunctionConstraint implements Constraint{
     this.c1=c1;
     this.c2=c2;
   }
+
+  public String getName(){
+    return "DisjunctionConstraint";
+  }
   public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object){
     if (this.c1.isSatisfiedBySchedule(object) || this.c2.isSatisfiedBySchedule(object)){
       return true;

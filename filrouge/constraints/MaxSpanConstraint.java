@@ -20,6 +20,10 @@ public class MaxSpanConstraint implements Constraint{
     return this.activities;
   }
 
+  public String getName(){
+    return "MaxSpanConstraint";
+  }
+
   public boolean isMaxSpan(){
     int time=0;
     for (Activity a: activities){

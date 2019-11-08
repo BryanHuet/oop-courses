@@ -7,7 +7,7 @@ public class Scheduler{
 
   public Scheduler(){}
 
-  private HashMap iniNbPreds(List<PrecedenceConstraint>listeContrainte){
+  private HashMap<Activity, Integer> iniNbPreds(List<PrecedenceConstraint>listeContrainte){
     int nbPreds=0;
     HashMap<Activity, Integer> hmap = new HashMap<>();
     for (PrecedenceConstraint c: listeContrainte){

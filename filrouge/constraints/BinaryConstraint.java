@@ -10,6 +10,10 @@ public abstract class BinaryConstraint implements Constraint{
     this.second = second;
   }
 
+  public String getName(){
+    return "BinaryConstraint";
+  }
+
   public Activity getFirst(){
     return this.first;
   }

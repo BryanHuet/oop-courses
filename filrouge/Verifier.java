@@ -19,7 +19,7 @@ public class Verifier{
   public boolean verify(HashMap<Activity, Integer> hmap){
     for(Constraint c: this.list){
       if ( ! c.isSatisfiedBySchedule(hmap)){
-        System.out.println(c);
+        System.out.println("Constaint: "+c.getName()+" is not valid");
         return false;
       }
     }

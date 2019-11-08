@@ -8,6 +8,10 @@ public class MeetConstraint extends BinaryConstraint{
     super(first,second);
   }
 
+  public String getName(){
+    return "MeetConstraint";
+  }
+
   public boolean isSatisfied(int date1, int date2){
     if (this.first.getDuree()+this.second.getDuree() > (date2-date1)*60){
 			return false;

@@ -8,6 +8,9 @@ public class NegationConstraint implements Constraint{
   public NegationConstraint(Constraint c){
     this.negaC=(c);
   }
+  public String getName(){
+    return "NegationConstraint";
+  }
   public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object){
     if (! negaC.isSatisfiedBySchedule(object)){
       return true;
