@@ -1,10 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-
-if [ ! "build" ];
+if test -d "build"
 then
-mkdir "build"
-fi;
+    if [ $1==2 ] || [ ! test -f */Main.java ]; 
+    then echo "Enter name of the exectuable class without .java: ";read exeName;
+    else exeName="Main";
+    fi;
+    for i in *;
+    do
+        if test -f $i/$exeName.java;
+          then package=$i;
+        fi;
+    done;
 
-javac -d "build" filrouge/*.java;
-java -cp "build" filrouge.Main;
+javac -d "build" $package/*.java;
+java -cp "build" $package.$exeName;
+
+else echo "Creation d'un dossier build...";
+echo " "
+mkdir "build";
+$0
+fi;
