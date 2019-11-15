@@ -2,7 +2,7 @@
 
 if test -d "build"
 then
-    if [ $1==2 ] || [ ! test -f */Main.java ]; 
+    if ! test -f */Main.java 
     then echo "Enter name of the exectuable class without .java: ";read exeName;
     else exeName="Main";
     fi;
@@ -19,5 +19,4 @@ java -cp "build" $package.$exeName;
 else echo "Creation d'un dossier build...";
 echo " "
 mkdir "build";
-$0
 fi;

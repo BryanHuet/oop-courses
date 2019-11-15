@@ -37,17 +37,28 @@ public class RandomScheduler{
     return schedule;
   }
 
-  public boolean verify(HashMap<Activity, Integer> hmap){
+  public int nbConstraintVerifier(HashMap<Activity, Integer> hmap){
+    int nb_constraint;
+    nb_constraint=0;
     for(Constraint c: this.constraints){
-      if ( ! c.isSatisfiedBySchedule(hmap)){
-        System.out.println("Constaint: "+c.getName()+" is not valid");
-        return false;
+      if (! c.isSatisfiedBySchedule(hmap)){
+        nb_constraint=nb_constraint+1;
       }
     }
-    return true;
+    return nb_constraint;
   }
-
-  public HashMap<Activity, Integer> edtRandom(){
-    
+  public HashMap<Activity, Integer> edtRandom(int n){
+    HashMap<Activity, Integer> edtRan=this.edt();
+    int nbConstraint=this.nbConstraintVerifier(edtRan);
+    for (int i=0;i<n;i++){
+      edtRan=this.edt();
+      nbConstraint=this.nbConstraintVerifier(edtRan);
+      if (nbConstraint==0){
+        System.out.println("Nombres de contraintes NON valide: "+nbConstraint);
+        return edtRan;
+      }
+    }
+    System.out.println("Nombres de contraintes NON valide: "+nbConstraint);
+    return edtRan;
   }
 }
