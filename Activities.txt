@@ -1,0 +1,4 @@
+cafe 5 Prendre un café
+bus 30 Trajet en bus
+cours 75 CM de POO en amphi Le Verrier
+salut 5 Saluer les copains
