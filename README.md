@@ -1,5 +1,5 @@
 # Schedule
-Project in OOP, the goal is to made a schedule with for enter a file with activities and constraints;
+Project in OOP, the goal is to create a schedule with for enter a file with activities and constraints;
 
 
 Ce jar est composé de :
