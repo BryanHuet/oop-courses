@@ -13,7 +13,7 @@ public class MeetConstraint extends BinaryConstraint{
   }
 
   public boolean isSatisfied(int date1, int date2){
-    if (this.first.getDuree()+this.second.getDuree() > (date2-date1)*60){
+    if ((this.first.getDuree()) > (date2-date1)){
 			return false;
 			}
 		return true;

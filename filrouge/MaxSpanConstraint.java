@@ -29,14 +29,14 @@ public class MaxSpanConstraint implements Constraint{
     for (Activity a: activities){
       time=time+a.getDuree();
     }
-    if (time > getMaxSpan()){
+    if (time > this.getMaxSpan()){
       return false;
     }
     return true;
   }
 
   public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> hashmap){
-    if ( ! isMaxSpan()){
+    if ( ! this.isMaxSpan()){
       return false;
     }
     return true;

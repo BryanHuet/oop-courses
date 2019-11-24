@@ -6,7 +6,7 @@ import java.util.Map;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.util.Arrays;
 public class Reader{
   protected HashMap<String,Activity> activities;
   protected String fileConstraint;
@@ -54,13 +54,21 @@ public class Reader{
     MeetConstraint contrainte = new MeetConstraint(first,second);
     return contrainte;
   }
-/*  public MaxSpanConstraint getMaxSpanConstraint(String[] act){
-    Activity first=this.getActivity().get(act[1]);
-    Activity second=this.getActivity().get(act[2]);
-    int span = Integer.parseInt(act[0]);
-    MaxSpanConstraint contrainte = new MaxSpanConstraint();
+public MaxSpanConstraint getMaxSpanConstraint(String[] act){
+    String[] tmpStr = act;
+    int maxSpan = Integer.parseInt(tmpStr[0]);
+    List <String> tmp=new ArrayList<String>();
+    for (String a: tmpStr){
+      tmp.add(a);
+    }
+    tmp.remove(tmpStr[0]);
+    List<Activity> listAct = new ArrayList<Activity>();
+    for (String a: tmp){
+      listAct.add(this.activities.get(a));
+    }
+    MaxSpanConstraint contrainte = new MaxSpanConstraint(listAct,maxSpan);
     return contrainte;
-  }*/
+  }
 
   public List<Constraint> readConstraint(){
     ConstraintReader constR = new ConstraintReader(this.fileConstraint);
@@ -75,6 +83,9 @@ public class Reader{
       }
       if (entry.getKeyword().equals("MEET")){
         tmpList.add(this.getMeetConstraint(entry.getArguments()));
+      }
+      if (entry.getKeyword().equals("MAX_SPAN")){
+        tmpList.add(this.getMaxSpanConstraint(entry.getArguments()));
       }
   			}
     }catch (IOException e){

@@ -32,6 +32,7 @@ public class RandomScheduler{
     HashMap<Activity, Integer> schedule = new HashMap<Activity, Integer> ();
     for(Activity a: this.activities){
       int time = this.randomGenerator.nextInt(60) + 1;
+      a.duree=time;
       schedule.put(a,time);
     }
     return schedule;
@@ -55,10 +56,12 @@ public class RandomScheduler{
       nbConstraint=this.nbConstraintVerifier(edtRan);
       if (nbConstraint==0){
         System.out.println("Nombres de contraintes NON valide: "+nbConstraint);
+        System.out.println();
         return edtRan;
       }
     }
     System.out.println("Nombres de contraintes NON valide: "+nbConstraint);
+    System.out.println();
     return edtRan;
   }
 }

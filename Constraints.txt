@@ -3,4 +3,3 @@ PRECEDENCE_GAP 20 cafe cours
 MEET bus cours
 PRECEDENCE salut cours
 MAX_SPAN 60 cafe bus salut
-PRECEDENCE bus salut
