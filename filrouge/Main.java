@@ -16,7 +16,7 @@ public class Main {
 		for (Constraint c: R.readConstraint()){
 			finalTest.addConstraint(c);
 		}
-		HashMap<Activity, Integer> final1=finalTest.edtRandom(10000);
+		HashMap<Activity, Integer> final1=finalTest.edtRandom(1000);
 		for (Map.Entry<Activity, Integer> entry : final1.entrySet()) {
 			System.out.println(entry.getKey().getDescription()+" : "+entry.getValue());
 			}

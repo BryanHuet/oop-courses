@@ -12,7 +12,9 @@ then
           then package=$i;
         fi;
     done;
-
+if [ ! -z $1 ]
+then exeName=$1
+fi
 javac -d "build" -cp "scheduleio.jar" $package/*.java;
 java -cp "build;scheduleio.jar" $package.$exeName Activities.txt Constraints.txt;
 rm -rf "build";
@@ -20,5 +22,5 @@ rm -rf "build";
 else echo "Creation d'un dossier build...";
 echo " "
 mkdir "build";
-./exe.sh;
+./exe.sh $1;
 fi;
