@@ -30,7 +30,7 @@ Méthode d'exécution :
 	javac -d 'build' -cp "scheduleio.jar" filrouge/*.java
 
 	Linux:
-	java -cp "build:scheduleio.jar" filrouge.Main
+	java -cp "build:scheduleio.jar" filrouge.Main Activities.txt Constraints.txt
 
 	Windows:
-	java -cp "build;scheduleio.jar" filrouge.Main
+	java -cp "build;scheduleio.jar" filrouge.Main Activities.txt Constraints.txt

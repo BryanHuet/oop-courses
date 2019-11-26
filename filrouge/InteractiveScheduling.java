@@ -8,25 +8,8 @@ import java.util.HashMap;
 
 public class InteractiveScheduling {
 	public static void main (String [] args) {
-/*
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Entrez le nombre d'activites voulu");
-    int nb = scanner.nextInt();
-    int duree=0;String desc;
-    ArrayList<Activity> activities = new ArrayList();
-    for (int i=0;i<nb;i++){
-      System.out.println("Description de lactivite");
-      desc=scanner.next();
-      System.out.println("Duree de lactivite");
-      duree = scanner.nextInt();
-      Activity act = new Activity(desc,duree);
-      activities.add(act);
-    }
-    scanner.close();
 
-    for(Activity i : activities){
-    System.out.println(i.getDescription());
-  }*/
+
 
 
 
@@ -80,6 +63,25 @@ public class InteractiveScheduling {
 	      System.out.println("Oui");
 	  }
 
+	}
+	else {
+		/*
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Entrez le nombre d'activites voulu");
+		int nb = scanner.nextInt();
+		int duree=0;String desc;
+		ArrayList<Activity> activities = new ArrayList();
+		for (int i=1;i<nb+1;i++){
+			System.out.println("Description de lactivite "+ i +" (sans espace)");
+			desc=scanner.next();
+			System.out.println("Duree de lactivite "+i+" (entier)");
+			duree = scanner.nextInt();
+			Activity act = new Activity(desc,duree);
+			activities.add(act);
+		}
+		scanner.close();
+*/
+		System.out.println("Non développé");
 	}
  }
 }
