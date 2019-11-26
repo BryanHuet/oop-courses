@@ -1,5 +1,4 @@
 package filrouge;
-import filrouge.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 import scheduleio.*;

@@ -1,5 +1,4 @@
-package filrouge.constraints;
-import filrouge.*;
+package filrouge;
 
 public abstract class BinaryConstraint implements Constraint{
   protected Activity first;

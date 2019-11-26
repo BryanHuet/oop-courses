@@ -1,5 +1,4 @@
-package filrouge.constraints;
-import filrouge.*;
+package filrouge;
 import java.util.HashMap;
 
 public class MeetConstraint extends BinaryConstraint{

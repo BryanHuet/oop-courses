@@ -1,5 +1,4 @@
-package filrouge.constraints;
-import filrouge.*;
+package filrouge;
 import java.util.List;
 import java.util.HashMap;
 

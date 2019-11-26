@@ -1,18 +1,14 @@
 package filrouge;
-import filrouge.constraints.*;
 import java.util.Scanner;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//CLASSE EXECUTABLE
+//
 
 public class InteractiveScheduling {
 	public static void main (String [] args) {
-
-
-
-
-
 
 	Scanner scanner2 = new Scanner(System.in);
 	String rep;

@@ -1,7 +1,7 @@
-package filrouge.constraints;
-import filrouge.*;
+package filrouge;
 import java.util.HashMap;
 
+// La contrainte 1 est validée OU la contrainte 2 est validée
 public class DisjunctionConstraint implements Constraint{
   protected Constraint c1;
   protected Constraint c2;

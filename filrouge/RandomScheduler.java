@@ -1,5 +1,4 @@
 package filrouge;
-import filrouge.constraints.*;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -51,16 +50,18 @@ public class RandomScheduler{
   public HashMap<Activity, Integer> edtRandom(int n){
     HashMap<Activity, Integer> edtRan=this.edt();
     int nbConstraint=this.nbConstraintVerifier(edtRan);
-    for (int i=0;i<n;i++){
+    for (int i=1;i<n+1;i++){
       edtRan=this.edt();
       nbConstraint=this.nbConstraintVerifier(edtRan);
       if (nbConstraint==0){
-        System.out.println("Nombres de contraintes NON valide: "+nbConstraint);
+        System.out.println("Nombre d'emploi du temps crées: "+i);
+        System.out.println("Nombre de contraintes NON valide: "+nbConstraint);
         System.out.println();
         return edtRan;
       }
     }
-    System.out.println("Nombres de contraintes NON valide: "+nbConstraint);
+    System.out.println("Nombre d'emploi du temps crées: "+n);
+    System.out.println("Nombre de contraintes NON valide: "+nbConstraint);
     System.out.println();
     return edtRan;
   }

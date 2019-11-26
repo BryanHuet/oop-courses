@@ -1,7 +1,6 @@
 package filrouge;
 import scheduleio.*;
 import java.util.List;
-import filrouge.constraints.*;
 import java.util.Map;
 import java.io.IOException;
 import java.util.ArrayList;
