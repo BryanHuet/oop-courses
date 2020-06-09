@@ -1,11 +1,15 @@
-package filrouge;
+package scheduling;
+
+import constraints.Activity;
+import constraints.Constraint;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Verifier{
+public class Verifier {
   protected ArrayList<Constraint> list;
 
-  public Verifier(){
+  public Verifier() {
     this.list = new ArrayList<>();
   }
 

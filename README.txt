@@ -1,6 +1,6 @@
 
 Ce jar est composé de :
-	- un package filrouge, possédant deux classes executables : Main, InteractiveScheduling
+	- un package src, possédant deux classes executables : Main, InteractiveScheduling
 	- un fichier Activities.txt
 	- un fichier Constraints.txt
 	- un script shell : exe.sh
@@ -27,10 +27,10 @@ Méthode d'exécution :
 	on peut également lancer l'application manuellement à l'aide des commandes terminales suivantes :
 
 	mkdir build
-	javac -d 'build' -cp "scheduleio.jar" filrouge/*.java
+	javac -d 'build' -cp "scheduleio.jar" src/*.java
 
 	Linux:
-	java -cp "build:scheduleio.jar" filrouge.Main Activities.txt Constraints.txt
+	java -cp "build:scheduleio.jar" src.Main Activities.txt Constraints.txt
 
 	Windows:
-	java -cp "build;scheduleio.jar" filrouge.Main Activities.txt Constraints.txt
+	java -cp "build;scheduleio.jar" src.Main Activities.txt Constraints.txt

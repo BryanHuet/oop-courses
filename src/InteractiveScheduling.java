@@ -1,8 +1,10 @@
-package filrouge;
-import java.util.Scanner;
+import constraints.Activity;
+import constraints.MaxSpanConstraint;
+import constraints.MeetConstraint;
+import constraints.PrecedenceConstraint;
+import scheduling.Verifier;
+
 import java.util.*;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 //CLASSE EXECUTABLE
 //
@@ -38,26 +40,26 @@ public class InteractiveScheduling {
 	  scanner.close();
 		// On instancie un verifieur
 	  Verifier verifieur = new Verifier();
-	  // on ajoute des contraintes au verifieur;
-	  verifieur.add(new PrecedenceConstraint(cafe, campus));
-	  verifieur.add(new MeetConstraint(lireMail, cours));
+		// on ajoute des contraintes au verifieur;
+		verifieur.add(new PrecedenceConstraint(cafe, campus));
+		verifieur.add(new MeetConstraint(lireMail, cours));
 
-	  // Contrainte : activité1, activité2 et activité3 doivent toutes
-	  // être exécutées en au plus 90 minutes
-	  ArrayList<Activity> ensemble = new ArrayList<> ();
-	  ensemble.add(cafe);
-	  ensemble.add(campus);
-	  ensemble.add(lireMail);
+		// Contrainte : activité1, activité2 et activité3 doivent toutes
+		// être exécutées en au plus 90 minutes
+		ArrayList<Activity> ensemble = new ArrayList<>();
+		ensemble.add(cafe);
+		ensemble.add(campus);
+		ensemble.add(lireMail);
 		MaxSpanConstraint contrainteEnsemble = new MaxSpanConstraint(ensemble, 90);
-	  verifieur.add(contrainteEnsemble);
+		verifieur.add(contrainteEnsemble);
 
 		//test final :
-	  System.out.println("L'emploi du temps satisfait-il toutes les contraintes ? ");
-	  if (! verifieur.verify(emploiDuTemps)) {
-	      System.out.println("Non");
-	  } else {
-	      System.out.println("Oui");
-	  }
+		System.out.println("L'emploi du temps satisfait-il toutes les contraintes ? ");
+		if (!verifieur.verify(emploiDuTemps)) {
+			System.out.println("Non");
+		} else {
+			System.out.println("Oui");
+		}
 
 	}
 	else {

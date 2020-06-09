@@ -1,4 +1,4 @@
-package filrouge;
+package constraints;
 import java.util.HashMap;
 
 public class NegationConstraint implements Constraint{
@@ -10,12 +10,9 @@ public class NegationConstraint implements Constraint{
   public String getName(){
     return "NegationConstraint";
   }
-  public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object){
-    if (! negaC.isSatisfiedBySchedule(object)){
-      return true;
-    }
-    return false;
-	}
+  public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object) {
+    return !negaC.isSatisfiedBySchedule(object);
+  }
 
 
 

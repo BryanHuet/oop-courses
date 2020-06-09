@@ -1,10 +1,14 @@
-package filrouge;
-import java.util.Random;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.HashMap;
+package scheduling;
 
-public class RandomScheduler{
+import constraints.Activity;
+import constraints.Constraint;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Random;
+
+public class RandomScheduler {
   protected HashSet<Activity> activities;
   protected ArrayList<Constraint> constraints;
   protected Random randomGenerator;
@@ -16,9 +20,7 @@ public class RandomScheduler{
   }
 
   public void addActivity(Activity act){
-    if ( ! this.activities.contains(act)){
     this.activities.add(act);
-    }
   }
 
   public void addConstraint(Constraint constraint){
@@ -31,8 +33,8 @@ public class RandomScheduler{
     HashMap<Activity, Integer> schedule = new HashMap<Activity, Integer> ();
     for(Activity a: this.activities){
       int time = this.randomGenerator.nextInt(60) + 1;
-      a.duree=time;
-      schedule.put(a,time);
+      a.setDuree(time);
+      schedule.put(a, time);
     }
     return schedule;
   }

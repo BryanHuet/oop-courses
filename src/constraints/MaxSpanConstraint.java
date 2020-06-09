@@ -1,13 +1,14 @@
-package filrouge;
-import java.util.List;
-import java.util.HashMap;
+package constraints;
 
-public class MaxSpanConstraint implements Constraint{
+import java.util.HashMap;
+import java.util.List;
+
+public class MaxSpanConstraint implements Constraint {
   protected List<Activity> activities;
   protected int maxspan;
 
-  public MaxSpanConstraint(List<Activity> activities,int maxspan){
-    this.activities=activities;
+  public MaxSpanConstraint(List<Activity> activities, int maxspan) {
+    this.activities = activities;
     this.maxspan = maxspan;
   }
 
@@ -28,17 +29,11 @@ public class MaxSpanConstraint implements Constraint{
     for (Activity a: activities){
       time=time+a.getDuree();
     }
-    if (time > this.getMaxSpan()){
-      return false;
-    }
-    return true;
+    return time <= this.getMaxSpan();
   }
 
   public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> hashmap){
-    if ( ! this.isMaxSpan()){
-      return false;
-    }
-    return true;
+    return this.isMaxSpan();
   }
 
 

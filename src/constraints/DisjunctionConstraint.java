@@ -1,4 +1,4 @@
-package filrouge;
+package constraints;
 import java.util.HashMap;
 
 // La contrainte 1 est validée OU la contrainte 2 est validée
@@ -14,11 +14,8 @@ public class DisjunctionConstraint implements Constraint{
   public String getName(){
     return "DisjunctionConstraint";
   }
-  public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object){
-    if (this.c1.isSatisfiedBySchedule(object) || this.c2.isSatisfiedBySchedule(object)){
-      return true;
-    }
-  return false;
-	}
+  public boolean isSatisfiedBySchedule(HashMap<Activity, Integer> object) {
+    return this.c1.isSatisfiedBySchedule(object) || this.c2.isSatisfiedBySchedule(object);
+  }
 
 }
